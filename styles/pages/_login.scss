@@ -1,0 +1,62 @@
+@use "../base/colors" as colors;
+@use "../base/mixins" as mixin;
+@use "../base/variables" as vars;
+
+.login-wrapper {
+  position: absolute;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: colors.$dark-grey;
+
+  .login-title {
+    margin: 0 0 35px 0;
+    font-size: 3.2rem;
+  }
+
+  .input-wrapper {
+    margin-bottom: 35px;
+
+    .login-placeholder {
+      color: colors.$light-grey;
+      font-size: 1.4rem;
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    top: 70%;
+    display: none;
+    color: colors.$red;
+  }
+  .error-display {
+    display: block;
+  }
+}
+
+.login-button {
+  width: 30%;
+  font-weight: map-get(vars.$font-weight, medium);
+}
+
+.disabled {
+  background-color: colors.$disabled;
+  color: colors.$disabled-text;
+  border: unset;
+
+  &:hover {
+    background-color: colors.$disabled;
+  }
+}

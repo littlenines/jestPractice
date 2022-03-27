@@ -1,0 +1,66 @@
+@use "../base/colors" as colors;
+@use "../base/typography";
+@use "../base/global";
+@use "../base/mixins" as mixin;
+
+.modal-wrapper {
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+
+  @include mixin.xs {
+    max-width: 600px;
+  }
+
+   table {
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: 400;
+    table-layout: fixed;
+    font-family: "Quicksand", sans-serif;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    background-color: colors.$bck-modal-color-darken;
+  }
+
+   tr, th, td {
+    border-bottom: 1px solid colors.$table-border-bottom;
+    font-weight: 300;
+    text-align: left;
+    padding: 13px;
+    color: colors.$white;
+    font-size: 1.6rem;
+  }
+
+  td:nth-child(even),
+  th:nth-child(2) {
+    text-align: center;
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  th:hover {
+    background-color: colors.$white;
+    color: colors.$th-hover-color;
+    cursor: pointer;
+  }
+
+  .arrowDefault {
+    transform: rotate(90deg);
+    margin-left: 8px;
+    color: colors.$arrow-def-color;
+    pointer-events: none;
+  }
+
+  .fa-sort-amount-down,
+  .fa-sort-amount-up {
+    pointer-events: none;
+    color: colors.$arrow-active-color;
+    margin-left: 8px;
+  }
+}

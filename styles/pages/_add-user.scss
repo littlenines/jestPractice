@@ -1,0 +1,137 @@
+@use "../base/colors" as colors;
+@use "../base/mixins" as mixin;
+@use "../base/variables" as font-weight;
+
+.container {
+  max-width: 1600px;
+  padding: 0px 10px;
+}
+
+.add-user-title {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: map-get(font-weight.$font-weight, medium);
+}
+
+.add-user {
+  margin-top: 16px;
+}
+
+.form-user {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 45px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: colors.$light-background;
+  @include mixin.xs {
+    flex-wrap: wrap;
+    flex-direction: unset;
+  }
+
+  .input-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mixin.sm {
+      flex-direction: row;
+    }
+    @include mixin.md {
+      flex: 4;
+    }
+
+    .form-user-input {
+      padding: 12px 40px 12px 10px;
+      cursor: pointer;
+    }
+  }
+
+  .input-wrapper {
+    margin-top: 15px;
+    @include mixin.sm {
+      margin-top: 10px;
+      margin-left: 7px;
+    }
+
+    .input-wrap-field {
+      cursor: pointer;
+    }
+
+    #dropdown-grades-seniority {
+      overflow: hidden;
+    }
+  }
+
+  .top-input {
+    @include mixin.md {
+      flex: 1;
+    }
+  }
+
+  .form-user-input {
+    padding: 15px;
+    appearance: none;
+    text-overflow: ellipsis;
+    resize: none;
+
+    &:valid + label,
+    &:focus + label {
+      top: -15px;
+    }
+  }
+}
+
+.user-select-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 38px;
+  display: flex;
+  box-shadow: none;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border-color: transparent;
+  color: colors.$light-grey;
+  border-radius: 0 5px 5px 0;
+  background-color: colors.$light-button;
+}
+
+.icon-arrow-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(45deg);
+  }
+}
+
+.select-user-option {
+  font-size: 2rem;
+  text-align: center;
+  color: colors.$black;
+  background-color: colors.$white;
+}
+
+.form-user-textarea {
+  overflow-y: hidden;
+  height: auto;
+}

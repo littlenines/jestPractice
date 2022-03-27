@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../styles/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-wrapper">
+        <form class="login">
+            <p class="login-title">Login</p>
+            <div class="input-wrapper">
+                <input class="form-user-input" type="text" name="name" data-username data-change required>
+                <label class="login-placeholder" for="name">
+                    <span>Username&nbsp;*</span>
+                </label>
+            </div>
+            
+            <div class="input-wrapper">
+                <input class="form-user-input" type="password" name="password" data-password data-change required>
+                <label class="login-placeholder" for="name">
+                    <span>Password&nbsp;*</span>
+                </label>
+            </div>
+            
+            <p class="error-message" data-error-message>*Wrong username or password</p>
+            <button type="submit" class="login-button button disabled" data-login disabled>Submit</button>
+        </form>
+    </div>
+    <script type="module" src="../scripts/modules/login.js"></script>
+</body>
+</html>

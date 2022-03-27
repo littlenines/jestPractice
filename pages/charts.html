@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/components/_charts.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-logo">
+        <img src="../assets/images/logo/logo-white.png" alt="" />
+      </div>
+      <div class="header-info-settings">
+        <div class="info-text">Info and settings</div>
+        <div class="info-question-mark">&nbsp?</div>
+      </div>
+    </header>
+    <div class="canvas-wrapper">
+      <div class="canvas-wrap left">
+        <h2>Headcount</h2>
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
+      <div class="canvas-wrap center">
+        <h2>Seniority</h2>
+        <canvas id="myChart1" width="400" height="400"></canvas>
+      </div>
+      <div class="canvas-wrap right">
+        <h2>9Box</h2>
+        <canvas id="myChart2" width="400" height="400"></canvas>
+      </div>
+    </div>
+
+    <div class="technologies-section">
+      <div class="check-boxes">
+        <div class="check-box-wrap">
+          <input
+            class="all-checkboxes"
+            data-checkbox
+            type="checkbox"
+            id="HTML"
+            name="subscribe"
+            value="newsletter"
+          />
+          <label for="subscribeNews">HTML</label>
+        </div>
+        <div class="check-box-wrap">
+          <input
+            class="all-checkboxes"
+            data-checkbox
+            type="checkbox"
+            id="CSS"
+            name="subscribe"
+            value="newsletter"
+          />
+          <label for="subscribeNews">CSS</label>
+        </div>
+        <div class="check-box-wrap">
+          <input
+            class="all-checkboxes"
+            data-checkbox
+            type="checkbox"
+            id="JavaScript"
+            name="subscribe"
+            value="newsletter"
+          />
+          <label for="subscribeNews">JavaScript</label>
+        </div>
+        <div class="check-box-wrap">
+          <input
+            class="all-checkboxes"
+            data-checkbox
+            type="checkbox"
+            id="C#"
+            name="subscribe"
+            value="newsletter"
+          />
+          <label for="subscribeNews">C#</label>
+        </div>
+        <div class="check-box-wrap">
+          <input
+            class="all-checkboxes"
+            data-checkbox
+            type="checkbox"
+            id="Python"
+            name="subscribe"
+            value="newsletter"
+          />
+          <label for="subscribeNews">Python</label>
+        </div>
+      </div>
+      <h2>Technologies</h2>
+      <div id="test1"></div>
+    </div>
+
+    <script type="module" src="../scripts/modules/charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-stacked100@1.0.0"></script>
+  </body>
+</html>

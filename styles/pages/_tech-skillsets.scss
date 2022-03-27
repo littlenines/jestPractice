@@ -1,0 +1,229 @@
+@use "../base/colors" as colors;
+@use "../base/variables" as font-weight;
+@use "../base/mixins" as mixin;
+
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.section-title {
+    text-align: center;
+    margin: 48px 0px 16px 0px;
+
+    h2 {
+        color: colors.$light-grey;
+        font-size: 3.2rem;
+        font-weight: map-get(font-weight.$font-weight, medium);
+    }
+}
+
+.technology-skillset {
+    width: 100%;
+    
+    .tab-content-wrapper {
+        background-color: rgba(colors.$light-grey, $alpha: 0.2);
+        padding: 10px 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 100%;
+
+        .tab-content-list {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .tab-view-li { 
+            cursor: pointer;
+            margin: 5px 5px;
+            border-radius: 5px;
+            border: 2px solid colors.$light-grey;
+            
+            p {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: colors.$light-grey;
+                width: 100%;
+                padding: 12px;
+                pointer-events: none;
+
+                @include mixin.xs {
+                    font-size: 1.6rem;
+                    padding: 16px;
+                }
+            }
+
+            &:hover{
+                border: 2px solid colors.$blue;
+            }
+
+            &:hover > p {
+                color: colors.$blue;
+            }
+        }  
+
+        .highlight {
+            border: 2px solid colors.$blue;
+            
+        }
+
+        .highlight > p {
+            color: colors.$blue;
+        }
+    }
+
+    .panel-tab {
+        background-color: rgba(colors.$light-grey, $alpha: 0.2);
+
+        .position-input-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            padding: 50px 32px 40px 32px;
+            
+            .input-container {
+                margin: 10px;
+                position: relative;
+                height: 40px;
+            }
+
+        }
+
+        .wrapper-invisible {
+            display: none;
+        }
+    }
+
+    .field-title {
+        position: absolute;
+        top: -20px;
+        left: 5px;
+        font-size: 1.2rem;
+    }
+
+    .input-field {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 150px;
+        cursor: pointer;
+        position: relative;
+        
+        .skill-input {
+            text-align: center;
+            padding: 8px;
+            pointer-events: none;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            font-size: 1.6rem;
+            font-weight: normal;
+        }
+
+        .input-arrow {
+            background-color: rgb(108, 122, 141);
+            padding: 0px 12px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            pointer-events: none;
+
+            span {
+                pointer-events: none;
+            }
+
+            .fa-chevron-down {
+                pointer-events: none;
+                &::before {
+                    pointer-events: none;
+                    font-size: 1.6rem;
+                    color: white;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.input-text {
+    pointer-events: none;
+    text-align: center;
+    padding-left: 0px;
+    font-size: 1.5rem;
+    font-weight: map-get(font-weight.$font-weight, medium);
+}
+
+.dropdown-wrapper {
+    padding: 0px 0px;
+    position: absolute;
+    height: 0px;
+    transition: height 0.2s;
+    overflow: auto;
+    top: 43px;
+    background-color: white;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    pointer-events: none;
+    width: 0px;
+    
+    .dropdown-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .dropdown-list-item {
+            text-align: center;
+            font-size: 1.6rem;
+            display: block;
+            padding: 8px 16px;
+            cursor: pointer;
+
+            &:hover:not(.grade-clicked) {
+                background-color: rgb(233, 236, 239);
+            }
+        }
+    }
+    .grade-clicked {
+        background-color: rgb(227, 242, 253);
+    }
+}
+.dropdown-grades-opened {
+    padding: 4px 0px;
+    height: 180px;
+    width: 100%;
+    pointer-events: all;
+    z-index: 10;
+}
+
+.dropdown-grades-active {
+    padding: 4px 0px;
+    height: 150px;
+    width: 100%;
+    pointer-events: all;
+    z-index: 10;
+    overflow: auto;
+}
+
+.input-column {
+    .input-wrapper {
+        .dropdown-wrapper {
+            top: 50px;
+        }
+    }
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add user</title>
+    <link rel="stylesheet" href="../styles/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="skill-wrapper">
+      <h2 class="add-user-title">New Employee</h2>
+      <section class="add-user">
+        <form class="form-user">
+          <div class="input-wrapper top-input">
+            <input
+              class="form-user-input"
+              type="text"
+              name="name"
+              data-name
+              required
+            />
+            <label for="name">
+              <span>Name and surname</span>
+            </label>
+          </div>
+          <div class="input-column">
+            <div class="input-wrapper">
+              <input
+                class="form-user-input"
+                autocomplete="off"
+                type="number"
+                name="id"
+                data-id
+                required
+              />
+              <label for="id">
+                <span>Employee ID</span>
+              </label>
+            </div>
+            <div
+              class="input-wrapper dropdown-input-wrapper"
+              data-dropdown-input-wrapper
+            >
+              <div class="input-wrap-field">
+                <input
+                  type="text"
+                  required
+                  class="input-text"
+                  data-input
+                  data-seniorty-input
+                />
+                <label for="seniority">
+                  <span data-label>Seniority</span>
+                </label>
+
+                <button class="user-select-button">
+                  <i class="icon-arrow-down"></i>
+                </button>
+              </div>
+
+              <div class="dropdown-wrapper" id="dropdown-grades-seniority">
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item" data-seniority data-user-info>
+                    Junior
+                  </li>
+                  <li class="dropdown-list-item" data-seniority data-user-info>
+                    Medior
+                  </li>
+                  <li class="dropdown-list-item" data-seniority data-user-info>
+                    Senior
+                  </li>
+                  <li class="dropdown-list-item" data-seniority data-user-info>
+                    Non-technical
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="input-wrapper dropdown-input-wrapper"
+              data-dropdown-input-wrapper
+            >
+              <div class="input-wrap-field">
+                <input
+                  type="text"
+                  required
+                  class="input-text"
+                  data-input
+                  data-position-input
+                />
+                <label for="position">
+                  <span data-label>Position</span>
+                </label>
+
+                <button class="user-select-button">
+                  <i class="icon-arrow-down"></i>
+                </button>
+              </div>
+
+              <div class="dropdown-wrapper">
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    FrontEnd
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    BackEnd
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    QA
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    devOps
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    Designer
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    Mobile
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    Staff
+                  </li>
+                  <li class="dropdown-list-item" data-position data-user-info>
+                    Menagement
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="input-wrapper dropdown-input-wrapper"
+              data-dropdown-input-wrapper
+            >
+              <div class="input-wrap-field">
+                <input
+                  type="text"
+                  required
+                  class="input-text"
+                  data-input
+                  data-nine-box-input
+                />
+                <label for="9BOX">
+                  <span data-label>9BOX</span>
+                </label>
+                <button class="user-select-button">
+                  <i class="icon-arrow-down"></i>
+                </button>
+              </div>
+
+              <div class="dropdown-wrapper">
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    1
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    2
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    3
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    4
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    5
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    6
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    7
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    8
+                  </li>
+                  <li class="dropdown-list-item" data-nine-box data-user-info>
+                    9
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <textarea
+              maxlength="500"
+              class="form-user-input form-user-textarea"
+              name="comment"
+              data-comment
+              required
+            ></textarea>
+            <label for="comment">
+              <span>Comment</span>
+            </label>
+          </div>
+        </form>
+      </section>
+
+      <div class="section-title">
+        <h2>Technology skillset</h2>
+      </div>
+
+      <section class="technology-skillset">
+        <div class="tab-content-wrapper">
+          <ul class="tab-content-list">
+            <li class="tab-view-li catch-list-item">
+              <p>FRONTEND</p>
+            </li>
+
+            <li class="tab-view-li catch-list-item">
+              <p>BACKEND</p>
+            </li>
+
+            <li class="tab-view-li catch-list-item">
+              <p>QA</p>
+            </li>
+
+            <li class="tab-view-li catch-list-item">
+              <p>DEVOPS</p>
+            </li>
+
+            <li class="tab-view-li catch-list-item">
+              <p>DESIGN</p>
+            </li>
+
+            <li class="tab-view-li catch-list-item">
+              <p>MOBILE</p>
+            </li>
+            <li class="tab-view-li catch-list-item">
+              <p>OTHERS</p>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-tab">
+          <div class="position-input-wrapper wrapper-invisible"></div>
+          <div class="position-input-wrapper wrapper-invisible"></div>
+          <div class="position-input-wrapper wrapper-invisible"></div>
+          <div class="position-input-wrapper wrapper-invisible"></div>
+          <div class="position-input-wrapper wrapper-invisible"></div>
+          <div class="position-input-wrapper wrapper-invisible"></div>
+          <div class="position-input-wrapper wrapper-invisible"></div>
+        </div>
+      </section>
+      <div class="section-title">
+        <h2>NineBox matrix</h2>
+      </div>
+      <section class="nineBox-Matrix">
+        <div class="tab-content-wrapper">
+          <ul class="tab-content-list list-wrap">
+            <li class="tab-view-li position-list highlight" id="frontend">
+              <p class="p-tab-tittle">FRONTEND</p>
+            </li>
+            <li class="tab-view-li position-list" id="backend">
+              <p class="p-tab-tittle">BACKEND</p>
+            </li>
+            <li class="tab-view-li position-list" id="qa">
+              <p class="p-tab-tittle">QA</p>
+            </li>
+            <li class="tab-view-li position-list" id="devops">
+              <p class="p-tab-tittle">DEVOPS</p>
+            </li>
+            <li class="tab-view-li position-list" id="design">
+              <p class="p-tab-tittle">DESIGN</p>
+            </li>
+            <li class="tab-view-li position-list" id="mobile">
+              <p class="p-tab-tittle">MOBILE</p>
+            </li>
+          </ul>
+        </div>
+        <div class="panel-tab">
+          <div class="panel-tab-wrap" id="panel">
+            <div
+              class="level-wrap tab-content-wrapper active"
+              id="position-0"
+            ></div>
+
+            <div class="level-wrap tab-content-wrapper" id="position-1"></div>
+            <div class="level-wrap tab-content-wrapper" id="position-2"></div>
+            <div class="level-wrap tab-content-wrapper" id="position-3"></div>
+            <div class="level-wrap tab-content-wrapper" id="position-4"></div>
+            <div class="level-wrap tab-content-wrapper" id="position-5"></div>
+          </div>
+        </div>
+      </section>
+
+      <button class="button submit" data-submit>Submit</button>
+    </div>
+
+    <script type="module" src="../scripts/index.js"></script>
+    <script type="module" src="../scripts/modules/userPage.js"></script>
+    <script type="module" src="../scripts/modules/tech-skillsets.js"></script>
+    <script type="module" src="../scripts/modules/nineBox.js"></script>
+    <script
+      type="module"
+      src="../scripts/modules/modal-skill-grade/modal-skill-grade.js"
+    ></script>
+  </body>
+</html>
