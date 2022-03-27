@@ -1,0 +1,35 @@
+@use "colors" as colors;
+@use "mixins" as mixin;
+
+body {
+  font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
+  background-color: colors.$black;
+  background: linear-gradient(45deg, colors.$black, #2b558b);
+}
+
+html {
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+p {
+  color: colors.$light-grey;
+  font-size: 1.4rem;
+  line-height: 18px;
+}

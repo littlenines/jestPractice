@@ -1,0 +1,155 @@
+@use "colors" as colors;
+@use "mixins" as mixin;
+@use "variables" as variable;
+
+.btn {
+  color: colors.$light-grey;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 5px 10px;
+  font-weight: map-get(variable.$font-weight, bold);
+  border: none;
+
+  &:hover {
+    color: colors.$blue;
+  }
+}
+
+.button {
+  color: #fff;
+  background: colors.$button-color;
+  border: 1px solid colors.$button-color;
+  padding: 10px 16px;
+  font-size: 1.6rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-radius: 3px;
+  position: relative;
+
+  &:hover {
+    background: colors.$button-hover-color;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.3rem #a6d5fa;
+  }
+}
+.submit {
+  align-self: center;
+  padding: 8px 48px;
+}
+.submit:hover {
+  &::before {
+    content: "Saves current info into document";
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: colors.$info-box-bcg-color;
+    font-size: 1.4rem;
+    padding: 5px 15px;
+    width: 110%;
+    border-radius: 5px;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  &::after {
+    content: " ";
+    border-top: 5px solid colors.$info-box-bcg-color;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 0;
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.skill-wrapper {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  @include mixin.sm {
+    margin-bottom: 15px;
+  }
+
+  label {
+    position: absolute;
+    color: colors.$white;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10px;
+    font-size: 1.6rem;
+    pointer-events: none;
+    transition: top 0.1s linear, font-size 0.1s linear, padding-left 0.1s linear;
+  }
+}
+
+.card-title {
+  font-size: 1.8rem;
+  color: colors.$white;
+  margin-bottom: 15px;
+  @include mixin.sm {
+    font-size: 2.2rem;
+  }
+}
+
+.card-wrapper {
+  background-color: rgba(231, 236, 239, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px;
+
+  @include mixin.md {
+    padding: 20px;
+  }
+
+  .card-text {
+    width: 80%;
+    p {
+      margin-right: 20px;
+      font-weight: map-get(variable.$font-weight, small);
+    }
+  }
+  .card-photo-wrapper {
+    max-width: 20%;
+  }
+
+  &:hover {
+    background-color: rgba(231, 236, 239, 0.4);
+    cursor: pointer;
+  }
+}
+
+.card-photo-wrapper {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid colors.$light-grey;
+
+  img {
+    display: block;
+    width: 150%;
+    height: 150%;
+  }
+}

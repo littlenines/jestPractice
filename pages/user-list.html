@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.scss">    
+    <title>User list</title>
+</head>
+<body>    
+    <div class="modal" id="modalId">
+
+    </div>
+    <section class="user-list-container">
+        <div class="user-list-wrapper">
+            <div class="user-list-nav">
+                <div class="btn-charts-section">
+                    <button class=" button" id="btn-view-charts">View Charts</button>
+                </div>
+                <div class="btn-add-new-section">
+                    <button class="button" id="btn-new-employee">Add new employee</button>
+                </div>
+            </div>
+            <div class="user-list-header">
+                <div class="user-list-title">
+                    <h4>Badin Sheets</h4>
+                </div>
+                <div class="search-user-list">
+                    <div class="input-wrapper search">
+                        <label for="search"></label>
+                        <input type="search" name="name" required placeholder="Global Search" data-user-search>                        
+                    </div>
+                </div>
+                <div class="search-user-list-desktop">
+                    <span class="search-icon"></span>
+                    <div class="input-wrapper search">
+                        <label for="search"></label>
+                        <input type="search" name="name" size="50" required placeholder="Global Search" data-search>                        
+                    </div>
+                </div>
+            </div>
+            <div id="user-list" class="user-list">
+                <div id="user" class="user"></div>
+            </div>
+            <div class="user-list-table">
+                <table class="table-sortable">
+                    <thead>
+                        <tr class="row">
+                            <th class="icon">ID</th>
+                            <th class="icon">Name</th>
+                            <th class="icon">Position</th>
+                            <th class="icon"> Seniority</th>
+                            <th class="icon">9BOX</th>
+                            <th class="icon">Last UP</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData"></tbody>
+                </table>
+            </div>           
+        </div>
+    </section>
+    <script type="module"  src="../scripts/modules/user-list.js"></script>
+</body>
+</html>

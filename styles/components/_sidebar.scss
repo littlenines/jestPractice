@@ -1,0 +1,168 @@
+@use "../base/mixins" as mixin;
+@use "../base/colors" as color;
+
+
+// HEADER
+
+.header {
+  position: relative;
+  z-index: 999;
+  transition: 0.5s;
+}
+
+.sticky {
+  position: fixed;
+  width: 90%;
+  border: 1px solid gray;
+  height: 70px;
+  margin-left: 21px;
+  margin-top: 10px;
+  background: color.$mobile-sticky-header-background;
+  border-radius: 10px;
+  border: none;
+  transition: 0.5s ease;
+}
+
+.menu-icon {
+  height: 25px;
+  color: color.$white;
+}
+
+.header-logo {
+  height: 50px;
+  position: absolute;
+  overflow: hidden;
+  left: -12px;
+  top: 4px;
+  max-height: 100px;
+
+  img {
+    width: 93px;
+    height: 93px;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span:nth-child(2) {
+    margin: 5px 0;
+  }
+
+  span {
+    height: 3px;
+    width: 24px;
+    border-radius: 3px;
+    background-color: color.$white;
+    transition: transform 0.25s ease;
+  }
+
+  @include mixin.xs {
+    display: none;
+  }
+}
+
+// HAMBURGER MENU OPEN/CLOSE
+
+.mobile-active {
+  span:first-child {
+    border-top-left-radius: 3px;
+    transform: translate(-5.5px, 4px) rotate(-35deg) scaleX(0.7);
+  }
+
+  span:last-child {
+    border-bottom-left-radius: 3px;
+    transform: translate(-5.5px, -4px) rotate(35deg) scaleX(0.7);
+  }
+}
+
+// NAVBAR
+
+.navbar {
+  width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  @include mixin.xs {
+    right: 0;
+    top: 0;
+    width: 64px;
+    &:hover {
+      width: 250px;
+    }
+  }
+
+  .link-icon {
+    @include mixin.xs {
+      margin-left: 0px;
+      margin: 0 20px 0 10px;
+    }
+  }
+
+  .navbar-list-item {
+    margin: 0 25px 0 10px;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+
+    .list-item-text {
+      margin-left: 15px;
+      @include mixin.sm {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .navbar-list-item:hover {
+    cursor: pointer;
+    .link-icon {
+      fill: color.$blue;
+    }
+    color: color.$blue;
+    background-color: color.$light-background;
+    border-radius: 10px;
+  }
+
+  .navbar-list-item:first-child {
+    margin-bottom: 20px;
+  }
+
+  .navbar-list {
+    padding-top: 80px;
+    background-color: color.$black;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    color: color.$white;
+    position: relative;
+    transition: width 0.5s ease;
+
+    .last {
+      position: absolute;
+      bottom: 25px;
+      transition: width 0.5s ease;
+      @include mixin.xs {
+        display: none;
+        padding-right: 70px;
+      }
+    }
+  }
+}
+
+// LOGOUT BUTTON DISPLAY ON XS> SCREENS
+
+.navbar:hover .last {
+  display: flex;
+}
+
+// MOBILE MENU OPENED
+
+.opened {
+  width: calc(100% + 20px);
+}
