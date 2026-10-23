@@ -6,3 +6,4 @@ dist
 .vs-code
 .vscode
 .vscode
+.env

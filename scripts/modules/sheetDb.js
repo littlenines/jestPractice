@@ -5,10 +5,10 @@ const config = {
 
   project_id: "spreadsheets-334013",
 
-  private_key_id: "REMOVED_PRIVATE_KEY_ID",
+  private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
 
   private_key:
-    "REMOVED_PRIVATE_KEY",
+    (process.env.GOOGLE_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
 
   client_email: "spreadsheets@spreadsheets-334013.iam.gserviceaccount.com",
   client_id: "114768927475185783260",
